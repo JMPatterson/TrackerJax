@@ -12,10 +12,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>TrackerJax</title>
 
-    <link href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" rel="stylesheet" crossorigin="anoymous">
+    <link href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" rel="stylesheet"
+        crossorigin="anoymous">
     <link rel="stylesheet" type="text/css" href="css/trackerjax.css" />
     <!-- http://bootswatch.com/cosmo/ -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha256-Whc+9091keLVBxbyK4U697hqB4bcED+6LC64E9GuJkk= sha512-9PPlANXApnRCz1LMx2LPWwRfOKkWjQvH98q2lkxEG6/r6YVoQ+F48btbiuOpDsWHjpZrCfcGrPoVenVl69V09A==" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha256-Whc+9091keLVBxbyK4U697hqB4bcED+6LC64E9GuJkk= sha512-9PPlANXApnRCz1LMx2LPWwRfOKkWjQvH98q2lkxEG6/r6YVoQ+F48btbiuOpDsWHjpZrCfcGrPoVenVl69V09A=="
+        crossorigin="anonymous">
 
 </head>
 
@@ -105,24 +107,30 @@
                     <form id="regForm" method="post" action="#" autocomplete="on">
                         <div class="form-group">
                             <label class="control-label" for="regFName">First Name</label>
-                            <input type="text" class="form-control input-lg" id="regFName" placeholder="Tracker" autocapitalize="words" />
-                            <p class="help-block alert alert-warning hidden" id="regFNameAlert"><b>Yikes!</b> Gotta know what to call you.</p>
+                            <input type="text" class="form-control input-lg" id="regFName" placeholder="Tracker"
+                                autocapitalize="words" />
+                            <p class="help-block alert alert-warning hidden" id="regFNameAlert"><b>Yikes!</b> Gotta
+                                know what to call you.</p>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="regLName">Last Name</label>
                             <input type="text" class="form-control input-lg" id="regLName" placeholder="Jax" />
-                            <p class="help-block alert alert-warning hidden" id="regLNameAlert"><b>Whoa!</b> Last name first, please.</p>
+                            <p class="help-block alert alert-warning hidden" id="regLNameAlert"><b>Whoa!</b> Last name
+                                first, please.</p>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="regEmail">Email</label>
                             <input type="email" class="form-control input-lg" id="regEmail" placeholder="tracker@jax.com" />
-                            <p class="help-block alert alert-warning hidden" id="regEmailAlert"><b>Just a sec'!</b> Make sure your email's valid.</p>
+                            <p class="help-block alert alert-warning hidden" id="regEmailAlert"><b>Just a sec'!</b>
+                                Make sure your email's valid.</p>
                         </div>
                         <div class="form-group">
                             <label class="control-label" for="regPass">Password</label>
                             <input type="password" class="form-control input-lg" id="regPass" placeholder="password" />
-                            <p class="help-block alert alert-warning hidden" id="regPassAlert"><b>Hold up!</b> Something's not quite right here.</p>
-                            <p class="help-block"><small>Password should be at least 8 characters long and have upper and lowercase letters and numbers and no spaces.</small></p>
+                            <p class="help-block alert alert-warning hidden" id="regPassAlert"><b>Hold up!</b>
+                                Something's not quite right here.</p>
+                            <p class="help-block"><small>Password should be at least 8 characters long and have upper
+                                    and lowercase letters and numbers and no spaces.</small></p>
                         </div>
                         <button class="btn btn-default btn-block" id="registerBtn" type="submit">Go!</button>
                     </form>
@@ -146,17 +154,20 @@
                 <hr />
                 <div class="row topSpace">
                     <div class="col-xs-12">
-                        <a href="#bomPanel" class="btn btn-primary btn-block" id="bomBtn" data-transition="slideup">I read in the <b>Book of Mormon</b></a>
+                        <a href="#bomPanel" class="btn btn-primary btn-block" id="bomBtn" data-transition="slideup">I
+                            read in the <b>Book of Mormon</b></a>
                     </div>
                 </div>
                 <div class="row topSpace">
                     <div class="col-xs-12">
-                        <a href="#servicePanel" class="btn btn-success btn-block" data-transition="slideup">I performed <b>Service</b></a>
+                        <a href="#servicePanel" class="btn btn-success btn-block" data-transition="slideup">I performed
+                            <b>Service</b></a>
                     </div>
                 </div>
                 <div class="row topSpace">
                     <div class="col-xs-12">
-                        <a href="#fhePanel" class="btn btn-danger btn-block" data-transition="slideup">I held <b>Family Home Evening</b></a>
+                        <a href="#fhePanel" class="btn btn-danger btn-block" data-transition="slideup">I held <b>Family
+                                Home Evening</b></a>
                     </div>
                 </div>
                 <div class="row topSpace">
@@ -315,8 +326,21 @@
         </div>
         <!-- /footer -->
     </div>
-    
+
     <script type="text/javascript" src="cordova.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD2RzTlC0WXrSUiCwW1VrfhN87XMRA9mIY",
+            authDomain: "trackerjax-e061f.firebaseapp.com",
+            databaseURL: "https://trackerjax-e061f.firebaseio.com",
+            projectId: "trackerjax-e061f",
+            storageBucket: "trackerjax-e061f.appspot.com",
+            messagingSenderId: "736750982104"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>

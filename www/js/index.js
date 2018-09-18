@@ -42,8 +42,8 @@ var app = {
             data: {},
             success: function(data) {
                 $('#dbError').addClass('hidden');
+                var ulHTML = '';
                 if (data.length > 0) {
-                    var ulHTML = '';
                     for (var i = data.length - 1; i >= 0; i--) {
                         ulHTML += '<div class="col-xs-12 well well-sm user">';
                         ulHTML += '<h3>User</h3>';
@@ -54,12 +54,12 @@ var app = {
                             var teams = data[i].teams;
                             for (var ii = teams.length - 1; ii >= 0; ii--) {
                                 ulHTML += '<p>Team ID: ' + teams[ii].team_id + '<br />Status: ' + teams[ii].subscribe_status + '</p>';
-                            };
+                            }
                         }
                         ulHTML += '</div>';
-                    };
+                    }
                 } else {
-                    var ulHTML = '<p>No Users Found.</p>';
+                    ulHTML = '<p>No Users Found.</p>';
                 }
                 $('#dbUsers').html(ulHTML);
             },
@@ -81,8 +81,8 @@ var app = {
             data: {},
             success: function(data) {
                 $('#dbError').addClass('hidden');
+                var tHTML = '';
                 if (data.length > 0) {
-                    var tHTML = '';
                     for (var i = data.length - 1; i >= 0; i--) {
                         tHTML += '<div class="col-xs-12 team well well-sm">';
                         tHTML += '<h3>Teams</h3>';
@@ -92,9 +92,9 @@ var app = {
                         tHTML += '<p>Access Code: ' + data[i].code + '</p>';
                         tHTML += '<p>Owner ID: ' + data[i].owner_id + '</p>';
                         tHTML += '</div>';
-                    };
+                    }
                 } else {
-                    var tHTML = '<p>No Users Found.</p>';
+                    tHTML = '<p>No Users Found.</p>';
                 }
                 $('#dbTeams').html(tHTML);
             },
@@ -116,8 +116,8 @@ var app = {
             data: {},
             success: function(data) {
                 $('#dbError').addClass('hidden');
+                var gHTML = '';
                 if (data.length > 0) {
-                    var gHTML = '';
                     for (var j = data.length - 1; j >= 0; j--) {
                         var targetUnit = (data[j].targetUnit) ? ' ' + data[j].targetUnit : '';
                         gHTML += '<div class="col-xs-12 goal well well-sm" data-goal="' + data[j]._id.$oid + '">';
@@ -127,9 +127,9 @@ var app = {
                         gHTML += '<p>Target: <span class="completeEvents">0</span> / ' + numeral(data[j].target).format('0,0') + targetUnit + '</p>';
                         gHTML += '<p>End Date: ' + data[j].endDate + '</p>';
                         gHTML += '</div>';
-                    };
+                    }
                 } else {
-                    var gHTML = '<p>No Goals Found.</p>';
+                    gHTML = '<p>No Goals Found.</p>';
                 }
                 $('#dbGoals').html(gHTML);
             },
@@ -157,9 +157,9 @@ var app = {
                         var completeValue = parseInt(data[k].value);
                         if (!complete[data[k].goal_id]) complete[data[k].goal_id] = 0;
                         complete[data[k].goal_id] = (!isNaN(completeValue)) ? complete[data[k].goal_id] += completeValue : complete[data[k].goal_id];
-                    };
+                    }
 
-                    for (goal in complete) {
+                    for (var goal in complete) {
                         $('div[data-goal="' + goal + '"]').children('p').children('span.completeEvents').text(numeral(complete[goal]).format('0,0'));
                     }
 
