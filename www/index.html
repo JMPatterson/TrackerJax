@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>TrackerJax</title>
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" rel="stylesheet" crossorigin="anoymous">
+    <link rel="stylesheet" type="text/css" href="css/trackerjax.css" />
+    <!-- http://bootswatch.com/cosmo/ -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha256-Whc+9091keLVBxbyK4U697hqB4bcED+6LC64E9GuJkk= sha512-9PPlANXApnRCz1LMx2LPWwRfOKkWjQvH98q2lkxEG6/r6YVoQ+F48btbiuOpDsWHjpZrCfcGrPoVenVl69V09A==" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div data-role="page" id="index">
+        <div role="main" class="ui-content" data-inset="false">
+            <div class="container-fluid logoPort">
+                <div class="row-fluid">
+                    <img src="img/tj-logo-hex.png" />
+                    <p>Plug in to your dreams</p>
+                </div>
+                <div class="row">
+                    <a href="#login" class="btn btn-warning btn-block" data-transition="slideup">Sign In</a>
+                </div>
+                <div class="row topSpace">
+                    <a href="#register" class="btn btn-default btn-block" data-transition="slideup">Sign Up</a>
+                </div>
+            </div>
+            <div class="container-fluid logoLand">
+                <div class="row-fluid">
+                    <div class="col-xs-6 text-center">
+                        <img src="img/tj-logo-hex.png" />
+                        <p>Plug in to your dreams</p>
+                    </div>
+                    <div class="col-xs-6" style="margin-top:10%;">
+                        <div class="row">
+                            <a href="#login" class="btn btn-warning btn-block" data-transition="slideup">Sign In</a>
+                        </div>
+                        <div class="row topSpace">
+                            <a href="#register" class="btn btn-default btn-block" data-transition="slideup">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row topSpace hidden">
+                <div id="deviceready" class="alert alert-success">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Ready!</p>
+                    <p class="stormpath"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="page" id="login">
+        <div role="main" class="ui-content" data-inset="false">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <img src="img/tj-logo-hex.png" style="width:50%;height:50%;" />
+                    <p>Plug in to your dreams</p>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label" for="loginEmail">Email</label>
+                            <input type="email" class="form-control input-lg" id="loginEmail" placeholder="tracker@jax.com" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="loginPass">Password</label>
+                            <input type="password" class="form-control input-lg" id="loginPass" placeholder="password" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="help-block pull-right"><a href="#" class="aInverse">Forgot Password</a></span>
+                    </div>
+                    <div class="row">
+                        <a href="#main" class="btn btn-warning btn-block" id="logInBtn" data-transition="slideup">Go!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4><img src="img/tj-icon-hex-lowsat.png" style="width:10%;height:10%;" />TrackerJax</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+
+    <div data-role="page" id="register">
+        <div role="main" class="ui-content" data-inset="false">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <img src="img/tj-logo-hex.png" style="width:30%;height:30%;" />
+                    <p>Plug in to your dreams</p>
+                </div>
+                <div class="row">
+                    <form id="regForm" method="post" action="#" autocomplete="on">
+                        <div class="form-group">
+                            <label class="control-label" for="regFName">First Name</label>
+                            <input type="text" class="form-control input-lg" id="regFName" placeholder="Tracker" autocapitalize="words" />
+                            <p class="help-block alert alert-warning hidden" id="regFNameAlert"><b>Yikes!</b> Gotta know what to call you.</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="regLName">Last Name</label>
+                            <input type="text" class="form-control input-lg" id="regLName" placeholder="Jax" />
+                            <p class="help-block alert alert-warning hidden" id="regLNameAlert"><b>Whoa!</b> Last name first, please.</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="regEmail">Email</label>
+                            <input type="email" class="form-control input-lg" id="regEmail" placeholder="tracker@jax.com" />
+                            <p class="help-block alert alert-warning hidden" id="regEmailAlert"><b>Just a sec'!</b> Make sure your email's valid.</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="regPass">Password</label>
+                            <input type="password" class="form-control input-lg" id="regPass" placeholder="password" />
+                            <p class="help-block alert alert-warning hidden" id="regPassAlert"><b>Hold up!</b> Something's not quite right here.</p>
+                            <p class="help-block"><small>Password should be at least 8 characters long and have upper and lowercase letters and numbers and no spaces.</small></p>
+                        </div>
+                        <button class="btn btn-default btn-block" id="registerBtn" type="submit">Go!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4><img src="img/tj-icon-hex-lowsat.png" style="width:10%;height:10%;" />TrackerJax</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+
+    <div data-role="page" id="main">
+        <div role="main" class="ui-content" data-inset="false">
+            <div class="container-fluid">
+                <div class="row-fluid text-center">
+                    <h1>TrackerJax</h1>
+                    <p>Plug in to your dreams!</p>
+                </div>
+                <hr />
+                <div class="row topSpace">
+                    <div class="col-xs-12">
+                        <a href="#bomPanel" class="btn btn-primary btn-block" id="bomBtn" data-transition="slideup">I read in the <b>Book of Mormon</b></a>
+                    </div>
+                </div>
+                <div class="row topSpace">
+                    <div class="col-xs-12">
+                        <a href="#servicePanel" class="btn btn-success btn-block" data-transition="slideup">I performed <b>Service</b></a>
+                    </div>
+                </div>
+                <div class="row topSpace">
+                    <div class="col-xs-12">
+                        <a href="#fhePanel" class="btn btn-danger btn-block" data-transition="slideup">I held <b>Family Home Evening</b></a>
+                    </div>
+                </div>
+                <div class="row topSpace">
+                    <div class="col-xs-12">
+                        <a href="#totals" class="btn btn-warning btn-block" data-transition="slideup">Check out our <b>Progress!</b></a>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+    <!-- /page -->
+    <!-- Start of BOM page -->
+    <div data-role="page" id="bomPanel">
+        <div data-role="header">
+            <ul class="nav nav-pills">
+                <li><a href="#main" data-transition="slidedown" class="default">Home</a></li>
+                <li class="active"><a href="#bomPanel" data-transition="slide" class="primary">Study</a></li>
+                <li><a href="#servicePanel" data-transition="slideup" class="success">Serve</a></li>
+                <li><a href="#fhePanel" data-transition="slideup" class="danger">Learn</a></li>
+                <li><a href="#totals" data-transition="slideup" class="warning">Totals</a></li>
+            </ul>
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content topSpace">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3>Days Read in the<br /><b>Book of Mormon</b></h3>
+                            </div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control input-lg" id="bomVal" placeholder="0" />
+                                        <a class="btn btn-primary btn-block" id="logBOM">Report</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4><img src="img/tj-icon-hex-lowsat.png" style="width:10%;height:10%;" />TrackerJax</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <!-- Start of Service page -->
+    <div data-role="page" id="servicePanel">
+        <div data-role="header">
+            <ul class="nav nav-pills">
+                <li><a href="#main" data-transition="slidedown" class="default">Home</a></li>
+                <li><a href="#bomPanel" data-transition="slidedown" class="primary">Study</a></li>
+                <li class="active"><a href="#servicePanel" data-transition="slide" class="success">Serve</a></li>
+                <li><a href="#fhePanel" data-transition="slideup" class="danger">Learn</a></li>
+                <li><a href="#totals" data-transition="slideup" class="warning">Totals</a></li>
+            </ul>
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content topSpace">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3><b>Service</b><br />Hours Completed</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control input-lg" id="serviceVal" placeholder="0" />
+                                        <a class="btn btn-success btn-block" id="logService">Report</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4><img src="img/tj-icon-hex-lowsat.png" style="width:10%;height:10%;" />TrackerJax</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <!-- Start of FHE page -->
+    <div data-role="page" id="fhePanel">
+        <div data-role="header">
+            <ul class="nav nav-pills">
+                <li><a href="#main" data-transition="slidedown" class="default">Home</a></li>
+                <li><a href="#bomPanel" data-transition="slidedown" class="primary">Study</a></li>
+                <li><a href="#servicePanel" data-transition="slidedown" class="success">Serve</a></li>
+                <li class="active"><a href="#fhePanel" data-transition="slide" class="danger">Learn</a></li>
+                <li><a href="#totals" data-transition="slideup" class="warning">Totals</a></li>
+            </ul>
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content topSpace">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3><b>Family Home Evenings</b> held</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control input-lg" id="fheVal" placeholder="0" />
+                                        <a class="btn btn-danger btn-block" id="logFHE">Report</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer">
+            <h4><img src="img/tj-icon-hex-lowsat.png" style="width:10%;height:10%;" />TrackerJax</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <div data-role="page" id="totals">
+        <div data-role="header">
+            <ul class="nav nav-pills">
+                <li><a href="#main" data-transition="slidedown" class="default">Home</a></li>
+                <li><a href="#bomPanel" data-transition="slidedown" class="primary">Study</a></li>
+                <li><a href="#servicePanel" data-transition="slidedown" class="success">Serve</a></li>
+                <li><a href="#fhePanel" data-transition="slidedown" class="danger">Learn</a></li>
+                <li class="active"><a href="#totals" data-transition="slide" class="warning">Totals</a></li>
+            </ul>
+        </div>
+        <!-- /header -->
+        <div role="main" class="ui-content topSpace">
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="dbGoals"></div>
+                    <div id="dbUsers"></div>
+                    <div id="dbTeams"></div>
+                    <div id="dbError" class="alert alert-danger hidden"></div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer">
+            <h4><img src="img/tj-icon-hex-lowsat.png" style="width:10%;height:10%;" />TrackerJax</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.3/numeral.min.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

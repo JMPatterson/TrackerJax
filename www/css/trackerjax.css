@@ -1,0 +1,257 @@
+.logoPort div.row-fluid {
+    margin-bottom: 50px;
+    text-align: center;
+}
+.logoPort {
+    display: block;    
+}
+.logoLand {
+    display: none;
+}
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .logoLand {
+        display: block;
+    }
+    .logoPort {
+        display: none;
+    }
+    .logoLand {
+        margin-bottom: 0;
+    }
+}
+.topSpace {
+    margin-top: 15px;
+}
+
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+    /*color: #FFF;*/
+    font-weight: normal;
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper, .ui-link {
+    color: inherit; !important;
+    text-shadow: none !important;
+}
+.ui-page-theme-a a:hover, html .ui-bar-a a:hover, html .ui-body-a a:hover, html body .ui-group-theme-a a:hover {
+    /*color: #FFF !important;*/
+}
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {
+    /*color: #FFF !important;*/
+}
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+    background-color: #e9e9e9;
+    border-color: #ddd;
+    color: inherit;
+    text-shadow: none;
+    font-weight: normal;
+}
+/*a .ui-link {
+	color:#FFF;
+}
+a.aInverse {
+    color: #222222;
+}
+a.aInverse:hover {
+    color: #999999 !important;
+}*/
+input {
+    border-radius: 0px !important;
+    background-color: #FFF !important;
+}
+input[type="number"] {
+    text-align: center;
+}
+.ui-corner-all {
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+.event {
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    display:block;
+}
+
+.event.received {
+    display:none;
+}
+.nav-pills > li > a.primary {
+    color: #2780E3 !important;
+}
+.nav-pills > li.active > a.primary {
+    background-color: #2780E3 !important;
+    color: #FFF !important;
+}
+.nav-pills > li > a.success {
+    color: #3FB618 !important;
+}
+.nav-pills > li.active > a.success {
+    background-color: #3FB618 !important;
+    color: #FFF !important;
+}
+.nav-pills > li > a.danger {
+    color: #FF0039 !important;
+}
+.nav-pills > li.active > a.danger {
+    background-color: #FF0039 !important;
+    color: #FFF !important;
+}
+.nav-pills > li > a.warning {
+    color: #E45C00 !important;
+}
+.nav-pills > li.active > a.warning {
+    background-color: #E45C00 !important;
+    color: #FFF !important;
+}
+.nav-pills > li > a.default {
+    color: #222222 !important;
+}
+.nav-pills > li.active > a.default {
+    background-color: #222222 !important;
+    color: #FFF !important;
+}
+html,
+body,
+#index,
+#login,
+#register,
+#main,
+#bomPanel,
+#servicePanel,
+#fhePanel,
+#totals {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#index,
+#index *,
+#login,
+#login *,
+#register,
+#register *,
+#main,
+#main *,
+#bomPanel,
+#bomPanel *,
+#servicePanel,
+#servicePanel *,
+#fhePanel,
+#fhePanel *,
+#totals,
+#totals * {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*#index .ui-content,
+#login .ui-content,
+#register .ui-content,
+#main .ui-content,
+#bomPanel .ui-content,
+#servicePanel .ui-content,
+#fhePanel .ui-content,
+#totals .ui-content {
+  height: calc(100% - 97px); /* inherit height without padding nor border */
+}*/
+
+/* slide down */
+.slidedown.out {
+    -webkit-animation-name: fadeout;
+    -webkit-animation-duration: 0ms;
+    -moz-animation-name: fadeout;
+    -moz-animation-duration: 0ms;
+    animation-name: fadeout;
+    animation-duration: 0ms;
+}
+.slidedown.in {
+    -webkit-transform: translateY(0);
+    -webkit-animation-name: slideinfromtop;
+    -webkit-animation-duration: 250ms;
+    -moz-transform: translateY(0);
+    -moz-animation-name: slideinfromtop;
+    -moz-animation-duration: 250ms;
+    transform: translateY(0);
+    animation-name: slideinfromtop;
+    animation-duration: 250ms;
+}
+.slidedown.in.reverse {
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 150ms;
+    -moz-animation-name: fadein;
+    -moz-animation-duration: 150ms;
+    animation-name: fadein;
+    animation-duration: 150ms;
+}
+.slidedown.out.reverse {
+    -webkit-transform: translateY(-100%);
+    -webkit-animation-name: slideouttotop;
+    -webkit-animation-duration: 200ms;
+    -moz-transform: translateY(-100%);
+    -moz-animation-name: slideouttotop;
+    -moz-animation-duration: 200ms;
+    transform: translateY(-100%);
+    animation-name: slideouttotop;
+    animation-duration: 200ms;
+}
+/* slide up */
+.slideup.out {
+    -webkit-animation-name: fadeout;
+    -webkit-animation-duration: 0ms;
+    -moz-animation-name: fadeout;
+    -moz-animation-duration: 0ms;
+    animation-name: fadeout;
+    animation-duration: 0ms;
+}
+.slideup.in {
+    -webkit-transform: translateY(0);
+    -webkit-animation-name: slideinfrombottom;
+    -webkit-animation-duration: 250ms;
+    -moz-transform: translateY(0);
+    -moz-animation-name: slideinfrombottom;
+    -moz-animation-duration: 250ms;
+    transform: translateY(0);
+    animation-name: slideinfrombottom;
+    animation-duration: 250ms;
+}
+.slideup.in.reverse {
+    -webkit-animation-name: fadein;
+    -webkit-animation-duration: 150ms;
+    -moz-animation-name: fadein;
+    -moz-animation-duration: 150ms;
+    animation-name: fadein;
+    animation-duration: 150ms;
+}
+.slideup.out.reverse {
+    -webkit-transform: translateY(100%);
+    -webkit-animation-name: slideouttobottom;
+    -webkit-animation-duration: 200ms;
+    -moz-transform: translateY(100%);
+    -moz-animation-name: slideouttobottom;
+    -moz-animation-duration: 200ms;
+    transform: translateY(100%);
+    animation-name: slideouttobottom;
+    animation-duration: 200ms;
+}
+
+.btn {
+    line-height: 3 !important;
+    color: #FFF !important;
+}
+
+button.btn-default {
+    color: #ffffff;
+    background-color: #222222 !important;
+    border-color: #222222 !important;
+}
+button.btn-default:focus {
+    color: #ffffff;
+    background-color: #090909 !important;
+    border-color: #000000 !important;   
+}
